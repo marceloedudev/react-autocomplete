@@ -1,0 +1,22 @@
+{
+    "name": "example",
+    "version": "1.0.0",
+    "license": "MIT",
+    "dependencies": {
+        "react-app-polyfill": "^2.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "^17.0.17",
+        "@types/react-dom": "^17.0.9",
+        "parcel": "^2.0.0-rc.0",
+        "typescript": "^4.3.5"
+    },
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html"
+    },
+    "alias": {
+        "react": "../node_modules/react",
+        "react-dom": "../node_modules/react-dom/profiling"
+    }
+}
