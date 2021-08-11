@@ -95,8 +95,6 @@ const MakeAutoComplete: React.FC<IAutoComplete> = React.forwardRef((props, ref) 
   return (
     <>
       <Container width={width} margin={margin}>
-        {label && <label className="autocomplete-label">{label}</label>}
-
         <Label text={label} />
 
         <div className="autocomplete-content">
