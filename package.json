@@ -5,7 +5,6 @@
     "license": "MIT",
     "scripts": {
         "build": "tsdx build",
-        "prebuild": "rimraf dist",
         "start": "tsdx watch",
         "lint": "tsdx lint"
     },

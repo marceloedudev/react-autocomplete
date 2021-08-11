@@ -16,17 +16,38 @@ const dataList = Array.from(new Array(10000))
 
 const App = () => {
   const [stateValue, setStateValue] = React.useState<any>(null);
+  const [stateInput, setStateInput] = React.useState<any>({
+    userid: 0,
+  });
 
   return (
-    <AutoComplete
-      name="user_id"
-      label="Users"
-      itemLabel="name"
-      itemValue="id"
-      items={dataList}
-      value={stateValue}
-      onSelected={({ value }) => setStateValue(value)}
-    />
+    <>
+      <AutoComplete
+        name="user_id"
+        label="Users"
+        itemLabel="name"
+        itemValue="id"
+        items={dataList}
+        value={stateValue}
+        onSelected={({ value }) => setStateValue(value)}
+      />
+
+      <input
+        name="userid"
+        type="text"
+        value={stateInput.userid}
+        placeholder="type userid"
+        onChange={event =>
+          setStateInput({
+            [event.target.name]: event.target.value,
+          })
+        }
+      />
+
+      <button type="button" onClick={() => setStateValue(+stateInput.userid)}>
+        Save
+      </button>
+    </>
   );
 };
 

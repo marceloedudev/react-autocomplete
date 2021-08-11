@@ -8,7 +8,7 @@ export interface IContainer {
 export const Container = styled.div<IContainer>`
   position: relative;
   width: ${({ width }) => width || 15}%;
-  margin: ${({ margin }) => margin || '0'}px;
+  margin: ${({ margin }) => margin || 0}px;
 
   & .autocomplete-label {
     color: #333;
@@ -32,11 +32,11 @@ export const Container = styled.div<IContainer>`
       font-size: 12px;
       background-color: transparent;
       border: none;
-    }
 
-    & input:focus {
-      outline: none;
-      border: none;
+      :focus {
+        outline: none;
+        border: none;
+      }
     }
 
     & .autocomplete-controls {

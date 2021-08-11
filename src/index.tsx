@@ -6,6 +6,7 @@ import { Container } from './styles';
 import { ExpandInput } from './components/ExpandInput';
 import { Input } from './components/Input';
 import { ItemContent } from './components/ItemContent';
+import { Label } from './components/Label';
 import { Loading } from './components/Loading';
 import { NotFound } from './components/NotFound';
 import { VirtualList } from './components/VirtualList';
@@ -21,7 +22,7 @@ export interface IAutoCompleteSelectedItem {
 }
 
 interface IAutoComplete {
-  label?: string | number;
+  label?: string;
   name: string;
   value?: string | number | null;
   items: any[];
@@ -95,6 +96,8 @@ const MakeAutoComplete: React.FC<IAutoComplete> = React.forwardRef((props, ref) 
     <>
       <Container width={width} margin={margin}>
         {label && <label className="autocomplete-label">{label}</label>}
+
+        <Label text={label} />
 
         <div className="autocomplete-content">
           <Input
